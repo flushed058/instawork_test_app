@@ -171,62 +171,6 @@ const FormPage: FC<FormPageProps> = ({ isEditMode = false }) => {
       </form>
     </div>
   );
-
-  //     <div className="form-container">
-  //       <h1>{isEditMode ? "Edit" : "Add"} Team Member</h1>
-  //       <form onSubmit={handleSubmit}>
-  //         <input
-  //           name="first_name"
-  //           value={formData.first_name}
-  //           onChange={handleChange}
-  //           required
-  //         />
-  //         <input
-  //           name="last_name"
-  //           value={formData.last_name}
-  //           onChange={handleChange}
-  //           required
-  //         />
-  //         <input
-  //           type="email"
-  //           name="email"
-  //           value={formData.email}
-  //           onChange={handleChange}
-  //           required
-  //         />
-  //         <input
-  //           name="phone_number"
-  //           value={formData.phone_number}
-  //           onChange={handleChange}
-  //           required
-  //         />
-  //         <label>Role:</label>
-  //         <div className="radio-group">
-  //           <label>
-  //             <input
-  //               type="radio"
-  //               name="role"
-  //               value="regular"
-  //               checked={formData.role === "regular"}
-  //               onChange={handleRoleChange}
-  //             />
-  //             Regular
-  //           </label>
-  //           <label>
-  //             <input
-  //               type="radio"
-  //               name="role"
-  //               value="admin"
-  //               checked={formData.role === "admin"}
-  //               onChange={handleRoleChange}
-  //             />
-  //             Admin
-  //           </label>
-  //         </div>
-  //         <button type="submit">Save</button>
-  //       </form>
-  //     </div>
-  //   );
 };
 
 export default FormPage;
