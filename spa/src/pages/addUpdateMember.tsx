@@ -70,63 +70,163 @@ const FormPage: FC<FormPageProps> = ({ isEditMode = false }) => {
       role: e.target.value as Role,
     });
   };
-
   return (
-    <div className="form-container">
-      <h1>{isEditMode ? "Edit" : "Add"} Team Member</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          name="first_name"
-          value={formData.first_name}
-          onChange={handleChange}
-          required
-        />
-        <input
-          name="last_name"
-          value={formData.last_name}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
-        <input
-          name="phone_number"
-          value={formData.phone_number}
-          onChange={handleChange}
-          required
-        />
-        <label>Role:</label>
-        <div className="radio-group">
-          <label>
-            <input
-              type="radio"
-              name="role"
-              value="regular"
-              checked={formData.role === "regular"}
-              onChange={handleRoleChange}
-            />
-            Regular
+    <div className="container mx-auto px-4 py-8 max-w-md">
+      <h1 className="text-2xl font-bold text-gray-800 mb-6">
+        {isEditMode ? "Edit" : "Add"} Team Member
+      </h1>
+
+      <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow p-6">
+        <div className="mb-4">
+          <label className="block text-gray-700 text-sm font-bold mb-2">
+            First Name
           </label>
-          <label>
-            <input
-              type="radio"
-              name="role"
-              value="admin"
-              checked={formData.role === "admin"}
-              onChange={handleRoleChange}
-            />
-            Admin
-          </label>
+          <input
+            name="first_name"
+            value={formData.first_name}
+            onChange={handleChange}
+            required
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
         </div>
-        <button type="submit">Save</button>
+
+        <div className="mb-4">
+          <label className="block text-gray-700 text-sm font-bold mb-2">
+            Last Name
+          </label>
+          <input
+            name="last_name"
+            value={formData.last_name}
+            onChange={handleChange}
+            required
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+
+        <div className="mb-4">
+          <label className="block text-gray-700 text-sm font-bold mb-2">
+            Email
+          </label>
+          <input
+            name="email"
+            type="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+
+        <div className="mb-4">
+          <label className="block text-gray-700 text-sm font-bold mb-2">
+            Phone Number
+          </label>
+          <input
+            name="phone_number"
+            value={formData.phone_number}
+            onChange={handleChange}
+            required
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+
+        <div className="mb-4">
+          <label className="block text-gray-700 text-sm font-bold mb-2">
+            Role
+          </label>
+          <div className="flex space-x-4">
+            <label className="flex items-center space-x-2">
+              <input
+                type="radio"
+                name="role"
+                value="regular"
+                checked={formData.role === "regular"}
+                onChange={handleRoleChange}
+                className="text-blue-500 focus:ring-blue-500"
+              />
+              <span>Regular</span>
+            </label>
+            <label className="flex items-center space-x-2">
+              <input
+                type="radio"
+                name="role"
+                value="admin"
+                checked={formData.role === "admin"}
+                onChange={handleRoleChange}
+                className="text-blue-500 focus:ring-blue-500"
+              />
+              <span>Admin</span>
+            </label>
+          </div>
+        </div>
+
+        <div className="flex space-x-3">
+          <button
+            type="submit"
+            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition-colors"
+          >
+            Save
+          </button>
+        </div>
       </form>
     </div>
   );
+
+  //     <div className="form-container">
+  //       <h1>{isEditMode ? "Edit" : "Add"} Team Member</h1>
+  //       <form onSubmit={handleSubmit}>
+  //         <input
+  //           name="first_name"
+  //           value={formData.first_name}
+  //           onChange={handleChange}
+  //           required
+  //         />
+  //         <input
+  //           name="last_name"
+  //           value={formData.last_name}
+  //           onChange={handleChange}
+  //           required
+  //         />
+  //         <input
+  //           type="email"
+  //           name="email"
+  //           value={formData.email}
+  //           onChange={handleChange}
+  //           required
+  //         />
+  //         <input
+  //           name="phone_number"
+  //           value={formData.phone_number}
+  //           onChange={handleChange}
+  //           required
+  //         />
+  //         <label>Role:</label>
+  //         <div className="radio-group">
+  //           <label>
+  //             <input
+  //               type="radio"
+  //               name="role"
+  //               value="regular"
+  //               checked={formData.role === "regular"}
+  //               onChange={handleRoleChange}
+  //             />
+  //             Regular
+  //           </label>
+  //           <label>
+  //             <input
+  //               type="radio"
+  //               name="role"
+  //               value="admin"
+  //               checked={formData.role === "admin"}
+  //               onChange={handleRoleChange}
+  //             />
+  //             Admin
+  //           </label>
+  //         </div>
+  //         <button type="submit">Save</button>
+  //       </form>
+  //     </div>
+  //   );
 };
 
 export default FormPage;
